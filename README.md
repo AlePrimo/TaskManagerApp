@@ -1,6 +1,6 @@
 # 📝 TaskManagerApp
 
-Una aplicación web desarrollada con **Spring Boot** y **MySQL** para la gestión de tareas. Este proyecto forma parte del curso de Hibernate de OpenBootcamp y está orientado a reforzar conceptos clave como JPA, validaciones, DTOs y persistencia de datos.
+Una aplicación web desarrollada con **Spring Boot** y **MySQL** para la gestión de tareas. Este proyecto es educativo y está orientado a reforzar conceptos clave como JPA, validaciones, DTOs y persistencia de datos.
 
 ---
 

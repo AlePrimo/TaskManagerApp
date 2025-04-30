@@ -9,7 +9,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
+
 import java.util.List;
+
 
 @Entity
 @Table(name = "users")
@@ -34,8 +36,11 @@ public class UserEntity {
     @Email
     @NotBlank
     String email;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<Task> taskList = new ArrayList<>();
+
+
 
 
 }

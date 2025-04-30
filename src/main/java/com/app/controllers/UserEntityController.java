@@ -32,6 +32,7 @@ public class UserEntityController {
                         .lastName(user.getLastName())
                         .email(user.getEmail())
                         .taskList(user.getTaskList())
+
                         .build()).toList();
 
          return ResponseEntity.ok(userEntityDTOList);
@@ -50,6 +51,7 @@ public class UserEntityController {
               .lastName(userEntity.getLastName())
               .email(userEntity.getEmail())
               .taskList(userEntity.getTaskList())
+
               .build();
           return ResponseEntity.ok(userEntityDTO);
      }
@@ -73,6 +75,7 @@ this.userEntityService.save(UserEntity
         .lastName(userEntityDTO.getLastName())
         .email(userEntityDTO.getEmail())
         .taskList(userEntityDTO.getTaskList())
+
         .build());
 return  ResponseEntity.created(new URI("/api/users/saveUser")).build();
 
@@ -91,6 +94,7 @@ userEntity.setName(userEntityDTO.getName());
 userEntity.setLastName(userEntityDTO.getLastName());
 userEntity.setEmail(userEntityDTO.getEmail());
 userEntity.setTaskList(userEntityDTO.getTaskList());
+
 this.userEntityService.save(userEntity);
     return ResponseEntity.ok("Registro Actualizado");
 

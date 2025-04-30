@@ -29,6 +29,8 @@ public class UserEntityController {
                 .map(user ->UserEntityDTO.builder()
                         .id(user.getId())
                         .name(user.getName())
+                        .lastName(user.getLastName())
+                        .email(user.getEmail())
                         .taskList(user.getTaskList())
                         .build()).toList();
 
@@ -45,6 +47,8 @@ public class UserEntityController {
       UserEntityDTO userEntityDTO = UserEntityDTO.builder()
               .id(userEntity.getId())
               .name(userEntity.getName())
+              .lastName(userEntity.getLastName())
+              .email(userEntity.getEmail())
               .taskList(userEntity.getTaskList())
               .build();
           return ResponseEntity.ok(userEntityDTO);

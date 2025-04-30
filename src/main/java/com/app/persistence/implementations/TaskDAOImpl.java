@@ -13,8 +13,8 @@ import java.util.Optional;
 public class TaskDAOImpl implements ITaskDAO {
 
 
-@Autowired
-private TaskRepository taskRepository;
+    @Autowired
+    private TaskRepository taskRepository;
 
     @Override
     public List<Task> findAll() {

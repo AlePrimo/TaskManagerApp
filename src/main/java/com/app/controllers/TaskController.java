@@ -4,6 +4,7 @@ import com.app.controllers.dtos.TaskDTO;
 import com.app.models.Task;
 import com.app.services.ITaskService;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,7 +57,7 @@ public class TaskController {
     }
 
     @PostMapping("/saveTask")
-    public ResponseEntity<?> saveUser(@RequestBody TaskDTO taskDTO) throws URISyntaxException {
+    public ResponseEntity<?> saveUser(@Valid @RequestBody TaskDTO taskDTO) throws URISyntaxException {
         if(taskDTO.getTitle().isBlank()){
             return ResponseEntity.badRequest().build();
         }
@@ -71,7 +72,7 @@ public class TaskController {
     }
 
     @PutMapping("/updateTask/{id}")
-    public ResponseEntity<?> updateTask(@PathVariable Long id, @RequestBody TaskDTO taskDTO){
+    public ResponseEntity<?> updateTask(@PathVariable Long id, @Valid @RequestBody TaskDTO taskDTO){
          Optional<Task> optionalTask = this.iTaskService.findById(id);
 
         if(optionalTask.isPresent()){

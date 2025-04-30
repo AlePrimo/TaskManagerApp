@@ -3,6 +3,7 @@ package com.app.controllers;
 import com.app.controllers.dtos.UserEntityDTO;
 import com.app.models.UserEntity;
 import com.app.services.IUserEntityService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -55,7 +56,7 @@ public class UserEntityController {
 
 
     @PostMapping("/saveUser")
-    public ResponseEntity<?> saveUser(@RequestBody UserEntityDTO userEntityDTO) throws URISyntaxException {
+    public ResponseEntity<?> saveUser(@Valid @RequestBody UserEntityDTO userEntityDTO) throws URISyntaxException {
 
 if(userEntityDTO.getName().isBlank()){
     return ResponseEntity.badRequest().build();
@@ -75,7 +76,7 @@ return  ResponseEntity.created(new URI("/api/users/saveUser")).build();
 
 
     @PutMapping("/updateUser/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody UserEntityDTO userEntityDTO){
+    public ResponseEntity<?> updateUser(@PathVariable Long id, @Valid @RequestBody UserEntityDTO userEntityDTO){
 
       Optional<UserEntity> userEntityOptional = this.userEntityService.findById(id);
 

@@ -27,6 +27,7 @@ public class UserEntity {
     @NotBlank
     @Size(min = 3, max = 50)
     String name;
+    @Size(min = 3, max = 50)
     @Column(name = "last_name")
     @NotBlank
     String lastName;
